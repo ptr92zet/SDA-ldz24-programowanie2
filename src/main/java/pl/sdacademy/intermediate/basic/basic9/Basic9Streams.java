@@ -165,6 +165,7 @@ public class Basic9Streams {
                 .anyMatch(person -> person.getPhone() % 5 == 0);
         System.out.println("Is there any person older than 18, which has phone number dividable by 5? "
                                    + isAdultPersonPhoneDividableBy5);
+        System.out.println("Hello, world!");
 
     }
 
