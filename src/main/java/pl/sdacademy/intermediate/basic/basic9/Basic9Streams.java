@@ -166,6 +166,7 @@ public class Basic9Streams {
         System.out.println("Is there any person older than 18, which has phone number dividable by 5? "
                                    + isAdultPersonPhoneDividableBy5);
         System.out.println("Hello, world!");
+        System.out.println("Hello, world!");
 
     }
 
