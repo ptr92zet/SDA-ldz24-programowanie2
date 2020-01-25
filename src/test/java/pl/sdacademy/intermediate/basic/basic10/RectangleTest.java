@@ -12,6 +12,11 @@ import org.junit.Test;
  */
 public class RectangleTest {
 
+    private static final int DEFAULT_WIDTH = 3;
+    private static final int DEFAULT_HEIGHT = 4;
+    private static final int DEFAULT_AREA = 12;
+    private static final int DEFAULT_PERIMETER = 14;
+
     private Rectangle rectangle;
 
     @BeforeClass
@@ -26,7 +31,7 @@ public class RectangleTest {
 
     @Before
     public void setUp() {
-        rectangle = new Rectangle(3, 4);
+        rectangle = new Rectangle(DEFAULT_WIDTH, DEFAULT_HEIGHT);
     }
 
     @After
@@ -36,27 +41,27 @@ public class RectangleTest {
 
     @Test
     public void testCalculateArea() {
-        Assert.assertEquals(12, rectangle.calculateArea());
+        Assert.assertEquals(DEFAULT_AREA, rectangle.calculateArea());
     }
 
     @Test
     public void testCalculatePerimeter() {
-        Assert.assertEquals(14, rectangle.calculatePerimeter());
+        Assert.assertEquals(DEFAULT_PERIMETER, rectangle.calculatePerimeter());
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testThrowExceptionOnIncorrectValuesInConstructor() {
-        new Rectangle(-1, 4);
+        new Rectangle(-1, DEFAULT_HEIGHT);
     }
 
     @Test
     public void testGetWidth() {
-        Assert.assertEquals(3, rectangle.getWidth());
+        Assert.assertEquals(DEFAULT_WIDTH, rectangle.getWidth());
     }
 
     @Test
     public void testGetHeight() {
-        Assert.assertEquals(4, rectangle.getHeight());
+        Assert.assertEquals(DEFAULT_HEIGHT, rectangle.getHeight());
     }
 
     @Test
@@ -74,12 +79,12 @@ public class RectangleTest {
     @Test
     public void testWidthNotUpdatedOnWrongValue() {
         rectangle.updateWidth(0);
-        Assert.assertEquals(3, rectangle.getWidth());
+        Assert.assertEquals(DEFAULT_WIDTH, rectangle.getWidth());
     }
 
     @Test
     public void testHeightNotUpdatedOnWrongValue() {
         rectangle.updateHeight(0);
-        Assert.assertEquals(4, rectangle.getHeight());
+        Assert.assertEquals(DEFAULT_HEIGHT, rectangle.getHeight());
     }
 }
